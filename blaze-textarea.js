@@ -1,15 +1,28 @@
 if (Meteor.isClient) {
-  var value = new ReactiveVar('X');
+  Template.input.value = new ReactiveVar('X');
 
-  Template.hello.helpers({
+  Template.input.helpers({
     value: function () {
-      return value.get();;
+      return Template.input.value.get();;
     }
   });
 
-  Template.hello.events({
+  Template.input.events({
     'keyup': function (e) {
-      value.set(e.target.value);
+      Template.input.value.set(e.target.value);
+    }
+  });
+
+  Template.textarea.value = new ReactiveVar('X');
+  Template.textarea.helpers({
+    value: function () {
+      return Template.textarea.value.get();;
+    }
+  });
+
+  Template.textarea.events({
+    'keyup': function (e) {
+      Template.textarea.value.set(e.target.value);
     }
   });
 }

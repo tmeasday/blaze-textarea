@@ -5,9 +5,15 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
+  {{> input}}
+  {{> textarea}}
 </body>
 
-<template name="hello">
+<template name="input">
+  <input type="text" value={{value}} />
+</template>
+
+
+<template name="textarea">
   <textarea>{{value}}</textarea>
 </template>
